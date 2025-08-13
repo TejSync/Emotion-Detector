@@ -1,4 +1,4 @@
-#Emotion Detector - 😊 AI-Powered Emotion Recognition
+# Emotion Detector - 😊 AI-Powered Emotion Recognition
 
 A web application that uses **Machine Learning** to analyze any image and predict its overall emotion (e.g., Happy, Sad, Angry, Neutral, etc). Built with **React.js** and **Flask**, it processes uploaded images and uses **Google Gemini API** to generate meaningful one-line descriptions based on the detected emotion.
 
