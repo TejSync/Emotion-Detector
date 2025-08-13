@@ -1,0 +1,62 @@
+# ============================================
+# Node.js / React / Next.js
+# ============================================
+node_modules/
+build/
+dist/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor & OS
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Python / Flask
+# ============================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+instance/
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask-specific
+*.log
+config.pyc
+
+# ============================================
+# Testing / Coverage
+# ============================================
+coverage/
+.pytest_cache/
+.cache/
+htmlcov/
+
+# ============================================
+# Miscellaneous
+# ============================================
+*.sqlite3
+*.db
+*.pid

@@ -1,0 +1,5 @@
+flask
+flask-cors
+fer
+google-generativeai
+pillow
