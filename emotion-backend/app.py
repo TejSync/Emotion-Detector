@@ -31,8 +31,7 @@ def detect_emotion():
         if len(image_np.shape) != 3 or image_np.shape[2] != 3:
             return jsonify({"error": "Invalid image format. Please upload a color image."}), 400
 
-        # Detect emotionpip install flask flask-cors fer pillow numpy google-generativeai
-
+        # Detect emotion
         detector = FER()
         emotions = detector.detect_emotions(image_np)
 
@@ -57,6 +56,39 @@ def detect_emotion():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+# ✅ NEW: Change Emotion Route (for emotion transformation)
+@app.route("/change-emotion", methods=["POST"])
+def change_emotion():
+    """
+    Input: image + targetEmotion (e.g., 'happy', 'sad', 'angry')
+    Output: (mock) modified image or message
+    """
+    if "image" not in request.files or "targetEmotion" not in request.form:
+        return jsonify({"error": "Image and targetEmotion are required"}), 400
+
+    file = request.files["image"]
+    target_emotion = request.form["targetEmotion"]
+
+    try:
+        # Load image
+        image = Image.open(file.stream).convert("RGB")
+
+        # TODO 🚀 Plug in GAN/diffusion model here for real image transformation
+        # For now → Mock response
+        # You could integrate Stable Diffusion / GAN in future
+        mock_response = f"Successfully transformed face to look more {target_emotion}."
+
+        return jsonify({
+            "targetEmotion": target_emotion,
+            "status": mock_response
+            # In real case, return the modified image (base64 or URL)
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True)
